@@ -1,4 +1,17 @@
 - commits:
+    - subject: update versionist
+      hash: 8c70f760f9fee5eaa990316c9b0f99bfa6582755
+      body: ''
+      footer:
+        Changelog-entry: update versionist
+        changelog-entry: update versionist
+        Signed-off-by: Alex Gonzalez <alexg@balena.io>
+        signed-off-by: Alex Gonzalez <alexg@balena.io>
+      author: Alex Gonzalez
+      nested: []
+  version: 2.85.11+rev1
+  date: 2021-11-15T17:23:10.114Z
+- commits:
     - subject: Add a basic contract
       hash: 0192e7e09821483b5a80e82d31fce34866c408a6
       body: >
