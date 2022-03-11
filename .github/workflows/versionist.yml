@@ -1,0 +1,30 @@
+name: Run versionist
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+
+  versionist:
+    name: Run versionist
+    if: "!contains(github.event.head_commit.author.name, 'versionist')"   # Ignore push events made by the service account
+    runs-on: ubuntu-latest
+    outputs:                                              # (optional) Only if you want to use them in next jobs
+      version: ${{ steps.versionist.outputs.version }}    # version: project's version after running versionist
+      updated: ${{ steps.versionist.outputs.updated }}    # updated: true if the version has been updated
+    steps: 
+    - name: Checkout project
+      uses: actions/checkout@v2
+      with:
+        submodules: recursive
+        fetch-depth: 0                                    # We need all commits and tags
+        persist-credentials: false                        # Next step needs to use service account's token
+    - name: Run versionist
+      id: versionist                                      # (optional) Only needed if using outputs
+      uses: alexgg/versionist@alexgg-nested-changelog-v2
+      with:
+        # Provide your versionist service account details
+        github_email: 'yoctocookbook2ndedition@lindusembedded.com'
+        github_username: 'yoctocookbook2ndedition'
+        github_token: ${{ secrets.GH_VERSIONIST_TOKEN }}
