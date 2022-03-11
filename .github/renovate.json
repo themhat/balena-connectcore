@@ -1,0 +1,30 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:base",
+    ":disableDependencyDashboard",
+    ":semanticCommitsDisabled"
+  ],
+  "commitMessagePrefix": "Update",
+  "commitMessageAction": "",
+  "commitMessageTopic": "{{depName}}",
+  "commitBody": "Update {{depName}}\nChangelog-entry: Update {{depName}} to {{newDigest}}",
+  "prHourlyLimit": 0,
+  "labels": [
+    "dependencies"
+  ],
+  "git-submodules": {
+    "enabled": true
+  },
+  "packageRules": [
+    {
+      "matchPackagePatterns": ["*"],
+      "excludePackagePatterns": [".*meta-balena",".*balena-yocto-scripts",".*test-submodule"],
+      "enabled": false
+    },
+    {
+      "matchManagers": ["git-submodules"],
+      "automerge": true
+    }
+  ]
+}
