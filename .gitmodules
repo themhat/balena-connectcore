@@ -19,3 +19,6 @@
 [submodule "layers/meta-openembedded"]
 	path = layers/meta-openembedded
 	url = https://github.com/openembedded/meta-openembedded.git
+[submodule "layers/test-submodule"]
+	path = layers/test-submodule
+	url = https://github.com/themhat/test-submodule.git
