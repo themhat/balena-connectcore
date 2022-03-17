@@ -1,6 +1,26 @@
 Change log
 -----------
 
+# v2.95.1+rev1
+## (2022-03-17)
+
+
+<details>
+<summary> Update balena-yocto-scripts to a038ecce793495cbab26693a4e3ee31255e80390 [Renovate Bot] </summary>
+
+> ## balena-yocto-scripts-1.17.7
+> ### (2022-03-15)
+> 
+> * jenkins_generate_ami: surface preload app commit as variable [Joseph Kogut]
+> 
+</details>
+
+* Update versionist [Alex Gonzalez]
+* Update versionist workflow [Alex Gonzalez]
+* Update layers/test-submodule [Alex Gonzalez]
+* Add test-submodule upstream [Alex Gonzalez]
+* Modify repo.yml to use whole paths for upstreams [Alex Gonzalez]
+
 # v2.95.1
 ## (2022-03-11)
 

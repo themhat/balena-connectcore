@@ -1,4 +1,90 @@
 - commits:
+    - subject: Update balena-yocto-scripts to a038ecce793495cbab26693a4e3ee31255e80390
+      hash: 530d0ffae9bb30543c9c019b384f2921a0afab3b
+      body: Update balena-yocto-scripts
+      footer:
+        Changelog-entry: Update balena-yocto-scripts to a038ecce793495cbab26693a4e3ee31255e80390
+        changelog-entry: Update balena-yocto-scripts to a038ecce793495cbab26693a4e3ee31255e80390
+      author: Renovate Bot
+      nested:
+        - commits:
+            - subject: "jenkins_generate_ami: surface preload app commit as variable"
+              hash: 7248b344198ba09a219ee227ffea4b6f0a4850d7
+              body: >
+                Surface the preloaded app commit as a variable that can be
+                overridden in
+
+                the build job. Default to "current" to maintain existing behavior when
+
+                the variable isn't set.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Joseph Kogut <joseph@balena.io>
+                signed-off-by: Joseph Kogut <joseph@balena.io>
+              author: Joseph Kogut
+              nested: []
+          version: balena-yocto-scripts-1.17.7
+          title: "'jenkins_generate_ami: surface preload app commit as variable'"
+          date: 2022-03-15T16:36:33.654Z
+    - subject: Update versionist
+      hash: bd9fec034ee5c7aab5c7f2fc982366eb8d7a8e8e
+      body: ""
+      footer:
+        Changelog-entry: Update versionist
+        changelog-entry: Update versionist
+        Signed-off-by: Alex Gonzalez <alexg@balena.io>
+        signed-off-by: Alex Gonzalez <alexg@balena.io>
+      author: Alex Gonzalez
+      nested: []
+    - subject: Update versionist workflow
+      hash: e80f788744814ade0f733511f5f91d9cb8d35b66
+      body: |
+        Use alexgg/versionist@alexgg-nested-changelog-v3
+      footer:
+        Changelog-entry: Update versionist workflow
+        changelog-entry: Update versionist workflow
+        Signed-off-by: Alex Gonzalez <alexg@balena.io>
+        signed-off-by: Alex Gonzalez <alexg@balena.io>
+      author: Alex Gonzalez
+      nested: []
+    - subject: Update layers/test-submodule
+      hash: f3d46b911187b3dc6c77bd87646c9d24bca64953
+      body: |
+        Update layers/test-submodule
+      footer:
+        Changelog-entry: Update layers/test-submodule
+        changelog-entry: Update layers/test-submodule
+        Signed-off-by: Alex Gonzalez <alexg@balena.io>
+        signed-off-by: Alex Gonzalez <alexg@balena.io>
+      author: Alex Gonzalez
+      nested: []
+    - subject: Add test-submodule upstream
+      hash: a2312b8b2da0805f1686042533e04a66c35e7ffb
+      body: ""
+      footer:
+        Changelog-entry: Add test-submodule upstream
+        changelog-entry: Add test-submodule upstream
+        Signed-off-by: Alex Gonzalez <alexg@balena.io>
+        signed-off-by: Alex Gonzalez <alexg@balena.io>
+      author: Alex Gonzalez
+      nested: []
+    - subject: Modify repo.yml to use whole paths for upstreams
+      hash: 447cd0a85cfd4965beda914771aa903f385a04fb
+      body: |
+        This is required for versionist automatic version detection to work
+        with nested changelogs.
+      footer:
+        Changelog-entry: Modify repo.yml to use whole paths for upstreams
+        changelog-entry: Modify repo.yml to use whole paths for upstreams
+        Signed-off-by: Alex Gonzalez <alexg@balena.io>
+        signed-off-by: Alex Gonzalez <alexg@balena.io>
+      author: Alex Gonzalez
+      nested: []
+  version: 2.95.1+rev1
+  title: ""
+  date: 2022-03-17T09:37:53.514Z
+- commits:
     - subject: Update layers/meta-balena to 9191bc412d404e761d672d1750cd7fe5e2418550
       hash: cabf51c674f43a02267b26bbca5a8ef1e7cc1f2e
       body: Update layers/meta-balena
