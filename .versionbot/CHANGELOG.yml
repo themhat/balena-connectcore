@@ -1,4 +1,52 @@
 - commits:
+    - subject: Update layers/test-submodule to de42868c959b15499ab2785afd89882b8d2a5995
+      hash: c7a1c76e20e0516e81ce11439cb3e11edf057045
+      body: Update layers/test-submodule
+      footer:
+        Changelog-entry: Update layers/test-submodule to
+          de42868c959b15499ab2785afd89882b8d2a5995
+        changelog-entry: Update layers/test-submodule to
+          de42868c959b15499ab2785afd89882b8d2a5995
+      author: Renovate Bot
+      nested:
+        - commits:
+            - subject: "versionbot: Correct CHANGELOG format"
+              hash: e40a3c3c1659514bf736243f2aca558a8495d2eb
+              body: ""
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Alex Gonzalez <alexg@balena.io>
+                signed-off-by: Alex Gonzalez <alexg@balena.io>
+              author: Alex Gonzalez
+              nested: []
+            - subject: Update versionist to new tag
+              hash: 0bd3f217b3ea3be6a6b39f7e5e3f22e576b11993
+              body: ""
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Alex Gonzalez <alexg@balena.io>
+                signed-off-by: Alex Gonzalez <alexg@balena.io>
+              author: Alex Gonzalez
+              nested: []
+            - subject: Update README 16
+              hash: feaceb6d2085fbaaf1beede5668e17f6a9fc6171
+              body: ""
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Alex Gonzalez <alexg@balena.io>
+                signed-off-by: Alex Gonzalez <alexg@balena.io>
+              author: Alex Gonzalez
+              nested: []
+          version: test-submodule-0.0.2
+          title: ""
+          date: 2022-03-16T20:12:15.434Z
+  version: 2.95.1+rev2
+  title: ""
+  date: 2022-03-17T09:53:52.144Z
+- commits:
     - subject: Update balena-yocto-scripts to a038ecce793495cbab26693a4e3ee31255e80390
       hash: 530d0ffae9bb30543c9c019b384f2921a0afab3b
       body: Update balena-yocto-scripts

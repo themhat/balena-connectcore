@@ -1,6 +1,22 @@
 Change log
 -----------
 
+# v2.95.1+rev2
+## (2022-03-17)
+
+
+<details>
+<summary> Update layers/test-submodule to de42868c959b15499ab2785afd89882b8d2a5995 [Renovate Bot] </summary>
+
+> ## test-submodule-0.0.2
+> ### (2022-03-16)
+> 
+> * versionbot: Correct CHANGELOG format [Alex Gonzalez]
+> * Update versionist to new tag [Alex Gonzalez]
+> * Update README 16 [Alex Gonzalez]
+> 
+</details>
+
 # v2.95.1+rev1
 ## (2022-03-17)
 
