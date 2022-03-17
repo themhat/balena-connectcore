@@ -1,6 +1,20 @@
 Change log
 -----------
 
+# v2.95.2
+## (2022-03-17)
+
+
+<details>
+<summary> Update layers/meta-balena from v2.95.1 to v2.95.2 [Alex Gonzalez] </summary>
+
+> ## meta-balena-2.95.2
+> ### (2022-03-11)
+> 
+> * kernel-balena: Disable building gcc plugins [Alexandru Costache]
+> 
+</details>
+
 # v2.95.1+rev2
 ## (2022-03-17)
 
