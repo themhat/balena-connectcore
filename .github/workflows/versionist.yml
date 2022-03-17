@@ -22,7 +22,7 @@ jobs:
         persist-credentials: false                        # Next step needs to use service account's token
     - name: Run versionist
       id: versionist                                      # (optional) Only needed if using outputs
-      uses: alexgg/versionist@alexgg-nested-changelog-v4
+      uses: alexgg/versionist@alexgg-nested-changelog-v5
       with:
         # Provide your versionist service account details
         github_email: 'yoctocookbook2ndedition@lindusembedded.com'
