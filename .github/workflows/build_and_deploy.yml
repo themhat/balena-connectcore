@@ -36,10 +36,3 @@ jobs:
       - name: Triggers a deploy job
         run: |
           echo "Deploying" ${{ matrix.board }}
-        uses: Gympass/jenkins-job-action@0.0.5
-        with:
-          jenkins_url: "https://jenkins.product-os.io"
-          jenkins_user: "alexg@balena.io" # Replace for automation account
-          jenkins_token: "${{ secrets.jenkins_token }}" # Use a Github secret, for security purposes.
-          job_name: "balenaOS-deploy" # Deploys all boards in repository
-          jenkins_params: '{"board": "${{ matrix.boards }}", "tag": "${{  steps.get-latest-tag.outputs.tag }}", "deployTo": "staging", "final": "no"}'
