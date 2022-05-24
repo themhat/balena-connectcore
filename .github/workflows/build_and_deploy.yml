@@ -12,27 +12,51 @@ jobs:
   fetch:
     runs-on: ubuntu-latest
     outputs:
+      tag: ${{ steps.set-tag.outputs.tag }}
       boards: ${{ steps.list-boards.outputs.boards }}
     steps:
       - uses: actions/checkout@v3
+        with:
+          submodules: recursive
 
       - name: 'Fetch latest tag'
         id: get-latest-tag
         uses: "actions-ecosystem/action-get-latest-tag@v1"
-        if: ${{ steps.release-label.outputs.level != null }}
+
+      - name: 'Set tag'
+        id: set-tag
+        run: echo "::set-output name=tag::${{ steps.get-latest-tag.outputs.tag }}"
 
       - name: 'Fetch all boards'
         id: list-boards
+        if: ${{ steps.get-latest-tag.outputs.tag != null }}
         run: |
-          echo "::set-output name=boards::$(find -maxdepth 1 -name \"*coffee\" -exec basename {} \; | cut -d '.' -f1)"
+          $(pwd)/balena-yocto-scripts/build/build-device-type-json.sh || (echo "Could not generate .json file(s)." && exit 1)
+          tmpfile=$(mktemp)
+          cat << 'EOF' > "${tmpfile}"
+          { "include": [] }
+          EOF
+          board_list=$(find . -maxdepth 1 -type f -name "*json" -exec jq -r '.yocto.machine' {} \;)
+          for board in ${board_list}; do
+            jq --arg board "${board}" '.include[.include | length] |= . + {"board": $board}' "${tmpfile}" | sponge "${tmpfile}"
+          done
+          cat "${tmpfile}"
+          echo "::set-output name=boards::cat ${tmpfile}"
+          rm "${tmpfile}"
+
+      - name: 'Show boards'
+        id: show-boards
+        run: echo "${{ needs.fetch.outputs.boards }}"
 
   deploy:
     needs: fetch
     runs-on: ubuntu-latest
     strategy:
-      matrix:
-        board: ${{  needs.fetch.list-boards.outputs.boards }}
+      matrix: ${{fromJson(needs.fetch.outputs.boards)}}
     steps:
       - name: Triggers a deploy job
+        if: ${{ matrix.board  != null }}
         run: |
           echo "Deploying" ${{ matrix.board }}
+          echo "Tag ${{ needs.fetch.outputs.tag }} "
+          echo "TEST ${{ needs.fetch.outputs.boards }}"
