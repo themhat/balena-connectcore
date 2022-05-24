@@ -31,7 +31,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        board: ${{  jobs.fetch.list-boards.outputs.boards }}
+        board: ${{  needs.fetch.list-boards.outputs.boards }}
     steps:
       - name: Triggers a deploy job
         run: |
